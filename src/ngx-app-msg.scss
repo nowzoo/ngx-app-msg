@@ -9,8 +9,8 @@ $info: #17a2b8;
 $warning: #ffc107;
 $danger: #dc3545;
 $zindex: 1071; // tooltip + 1
-$modal-backdrop-bg: $black;
-$modal-backdrop-opacity: .5;
+$modal-backdrop-bg: $white;
+$modal-backdrop-opacity: .2;
 
 
 // icons fron Font Awesome
@@ -49,7 +49,7 @@ $spinner: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0
     transform: translateY(0);
   }
   .ngx-app-msg {
-    padding: $spacer;
+    padding: $spacer/2 $spacer;
     display: flex;
     align-items: center;
     justify-content: space-between;

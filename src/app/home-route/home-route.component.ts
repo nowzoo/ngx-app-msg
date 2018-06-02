@@ -8,14 +8,14 @@ import { NgxAppMsgService } from '@nowzoo/ngx-app-msg';
 export class HomeRouteComponent implements OnInit {
 
   constructor(
-    private msg: NgxAppMsgService
+    public msg: NgxAppMsgService
   ) { }
 
   ngOnInit() {
   }
 
-  demo() {
-    this.msg.wait('Doing something time consuming...', false, true, true);
+  tryMe() {
+    this.msg.wait('Doing some arduous and time consuming task...');
     setTimeout(() => {
       this.msg.success('Done!');
     }, 2000);

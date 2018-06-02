@@ -1,5 +1,36 @@
 <div class="jumbotron">
   <h1 class="display-4">NgxAppMessage</h1>
   <p class="lead">Flexible message service and component for Angular 6 apps.</p>
-  <button class="btn btn-primary btn-lg" (click)="demo()">Demo</button>
+  <button class="btn btn-primary btn-lg" (click)="tryMe()">Try Me!</button>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <p>
+        <button class="btn btn-info btn-sm" (click)="msg.wait('Please wait...', false, false, true)">wait()</button>
+
+      </p>
+    </div>
+    <div class="col-sm">
+      <p>
+        <button class="btn btn-danger btn-sm" (click)="msg.error('Something awful has happened.', false, false, true)">error()</button>
+      </p>
+    </div>
+    <div class="col-sm">
+      <p>
+        <button class="btn btn-warning btn-sm" (click)="msg.warn('That\'s not how you spell antidisestablishmentarianism.', false, false, true)">warn()</button>
+      </p>
+    </div>
+    <div class="col-sm">
+      <p>
+        <button class="btn btn-success btn-sm" (click)="msg.success('You are a winner!', false, false, true)">success()</button>
+      </p>
+    </div>
+    <div class="col-sm">
+      <p>
+        <button class="btn btn-light btn-sm" (click)="msg.hide()">hide()</button>
+      </p>
+    </div>
+  </div>
 </div>

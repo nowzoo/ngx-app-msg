@@ -40,4 +40,7 @@ export class NgxAppMsgService {
   success(message: string, autohide = true, modal = false, dismissible = true) {
     this._show('success', message, autohide, modal, dismissible);
   }
+  hide() {
+    this.messages$$.next(null);
+  }
 }
