@@ -125,6 +125,9 @@ The library itself is found under `projects/ngx-app-msg`.
 
 **Notes**
 
- - You must build the library with `ng build ngx-app-msg --prod` for changes to show up in the demo app. 
+ - You must build the library with `ng build ngx-app-msg --prod` for changes to show up in the demo app.
  - Also, you must build the library at least once before you serve the demo app.
  - The `publish` bash script will fail, unless you are a @nowzoo contributor. Instead, make a PR.
+
+## License
+[MIT](https://github.com/nowzoo/ngx-app-msg/blob/master/LICENSE) | Copyright 2018 NowZoo
