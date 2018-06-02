@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxMdModule } from 'ngx-md';
 
-import { NgxAppMsgModule } from 'ngx-app-msg';
+import { NgxAppMsgModule } from '@nowzoo/ngx-app-msg';
 import { AppComponent } from './app.component';
 import { HomeRouteComponent } from './home-route/home-route.component';
 

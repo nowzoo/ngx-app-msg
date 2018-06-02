@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxAppMsgService } from 'ngx-app-msg';
+import { NgxAppMsgService } from '@nowzoo/ngx-app-msg';
 @Component({
   selector: 'app-home-route',
   templateUrl: './home-route.component.html',

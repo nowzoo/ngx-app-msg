@@ -17,10 +17,10 @@
       "dom"
     ],
     "paths": {
-      "ngx-app-msg": [
+      "@nowzoo/ngx-app-msg": [
         "dist/ngx-app-msg"
       ],
-      "ngx-app-msg/*": [
+      "@nowzoo/ngx-app-msg/*": [
         "dist/ngx-app-msg/*"
       ]
     }
