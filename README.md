@@ -61,6 +61,7 @@ export class SomeComponent {
 `type INgxAppMsgContext = 'wait' | 'warning' | 'success' | 'error'`
 
 `interface INgxAppMsgOptions {autohideAfter: number;}`
+
 You can pass an instance of this to the component to set the autohide delay. The default delay is 4000 (4 seconds.)
 
 
