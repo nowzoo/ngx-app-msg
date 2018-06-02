@@ -95,3 +95,36 @@ All public methods take the following parameters. There are different defaults d
 None of the styles or animations are coded into the component. The stylesheet can be customized as you wish &mdash; e.g. switching the placement of the message, changing the icons, or adjusting the animations.
 
 If you don't like the markup, you can easily extend the component with a different template.
+
+## Contributing
+
+Contributions and suggestions are welcome.
+
+This library was built with the Angular CLI.
+
+To work on the code:
+
+```bash
+# clone this repo
+git clone https://github.com/nowzoo/ngx-app-msg.git
+
+#install the deps
+npm i
+
+# build the library...
+ng build ngx-app-msg --prod
+
+# Serve the demo locally
+ng serve --open
+
+```
+
+The demo site code is in `src/app`.
+
+The library itself is found under `projects/ngx-app-msg`.
+
+**Notes**
+
+ - You must build the library with `ng build ngx-app-msg --prod` for changes to show up in the demo app. 
+ - Also, you must build the library at least once before you serve the demo app.
+ - The `publish` bash script will fail, unless you are a @nowzoo contributor. Instead, make a PR.
