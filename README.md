@@ -11,7 +11,7 @@ npm i --save @nowzoo/ngx-app-msg
 
 Copy the `ngx-app-msg.scss` file [here](https://github.com/nowzoo/ngx-app-msg/blob/master/src/ngx-app-msg.scss) into your app's `src/` directory, and incorporate it into your app's styles. You can do this in `angular.json` ([example](https://github.com/nowzoo/ngx-app-msg/blob/master/angular.json#L31)) or by importing it from your main stylesheet.
 
-**Note:** None of the styles or animations are coded into the component. You have to provide them in your app's build. See [customizing](#Customizing) below.
+**Note:** None of the styles or animations are coded into the component. You have to provide them in your app's build. See [customizing](#customizing) below.
 
 ### Import the module
 ```ts
