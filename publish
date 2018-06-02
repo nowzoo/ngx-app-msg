@@ -3,17 +3,16 @@ baseDir=$(pwd);
 cd projects/ngx-app-msg
 version=$(npm version patch)
 cd $baseDir
-
 rm -rf dist
 ng build ngx-app-msg --prod
 rm -rf docs
 ng build --prod --aot
-npm version $version
 cp LICENSE README.md dist/ngx-app-msg
 git add -A
 git commit -m "publish version $version"
-git push origin master
+git tag $version
+git push origin $version
 cd dist/ngx-app-msg
-npm publish
+npm publish --access public
 cd $baseDir
 git status
