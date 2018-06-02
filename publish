@@ -3,17 +3,14 @@ baseDir=$(pwd);
 cd projects/ngx-app-msg
 version=$(npm version patch)
 cd $baseDir
-git add -A
-#
 
 rm -rf dist
 ng build ngx-app-msg --prod
 rm -rf docs
 ng build --prod --aot
+npm version $version
+cp LICENSE README.md dist/ngx-app-msg
 git add -A
-git commit -m "prepublish $version"
-npm version $version --allow-same-version
-cp LICENSE README.md /dist/ngx-app-msg
 git commit -m "publish version $version"
 git push origin master
 cd dist/ngx-app-msg
