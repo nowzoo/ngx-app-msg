@@ -12,6 +12,6 @@ rm -rf docs
 ng build --prod --aot
 git add -A
 git commit -m "prepublish $version"
-npm version $version
+npm version $version --allow-same-version
 git commit -m "publish version $version"
 git status
