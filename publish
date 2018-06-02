@@ -11,7 +11,8 @@ cp LICENSE README.md dist/ngx-app-msg
 git add -A
 git commit -m "publish version $version"
 git tag $version
-git push origin $version
+git push origin master
+git push --tags
 cd dist/ngx-app-msg
 npm publish --access public
 cd $baseDir
