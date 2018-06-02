@@ -15,10 +15,10 @@ export class HomeRouteComponent implements OnInit {
   }
 
   demo() {
-    this.msg.warn('Doing something time consuming...', false, true, true);
-    // setTimeout(() => {
-    //   this.msg.success('Done!');
-    // }, 2000);
+    this.msg.wait('Doing something time consuming...', false, true, true);
+    setTimeout(() => {
+      this.msg.success('Done!');
+    }, 2000);
   }
 
 }
