@@ -3,6 +3,12 @@ export interface INgxAppMsg {
   context: INgxAppMsgContext;
   message: string;
   modal: boolean;
-  dismissable: boolean;
+  dismissible: boolean;
   autohide: boolean;
+}
+export interface INgxAppMsgOptions {
+  autohideAfter: number;
+}
+export class NgxAppMsgOptions implements INgxAppMsgOptions {
+  autohideAfter = 4000;
 }

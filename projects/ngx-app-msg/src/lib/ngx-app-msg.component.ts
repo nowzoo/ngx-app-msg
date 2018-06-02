@@ -1,22 +1,24 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 
-import { INgxAppMsg } from './interfaces';
+import { INgxAppMsg, INgxAppMsgOptions, NgxAppMsgOptions } from './interfaces';
 import { NgxAppMsgService } from './ngx-app-msg.service';
 
 
 @Component({
   selector: 'ngx-app-msg',
+  exportAs: 'ngxAppMessage',
   templateUrl: './ngx-app-msg.component.html'
 })
 export class NgxAppMsgComponent implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<void> = new Subject<void>();
+  @Input() options: INgxAppMsgOptions = new NgxAppMsgOptions();
   shown = false;
   message: string;
   context: string;
-  dismissable: boolean;
+  dismissible: boolean;
   modal: boolean;
   hideTimeout: any = null;
   constructor(private service: NgxAppMsgService) { }
@@ -44,10 +46,10 @@ export class NgxAppMsgComponent implements OnInit, OnDestroy {
     } else {
       this.message = msg.message;
       this.context = msg.context;
-      this.dismissable = msg.dismissable;
+      this.dismissible = msg.dismissible;
       this.modal = msg.modal;
       if (msg.autohide) {
-        this.hideTimeout = setTimeout(() => this.shown = false, 3000);
+        this.hideTimeout = setTimeout(() => this.shown = false, this.options.autohideAfter);
       }
       this.shown = true;
     }

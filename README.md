@@ -11,6 +11,8 @@ npm i --save @nowzoo/ngx-app-msg
 
 Copy the `ngx-app-msg.scss` file [here](https://github.com/nowzoo/ngx-app-msg/blob/master/src/ngx-app-msg.scss) into your app's `src/` directory, and incorporate it into your app's styles. You can do this in `angular.json` ([example](https://github.com/nowzoo/ngx-app-msg/blob/master/angular.json#L31)) or by importing it from your main stylesheet.
 
+**Note:** None of the styles or animations are coded into the component. You have to provide them in your app's build. See [customizing](#Customizing) below.
+
 ### Import the module
 ```ts
 // app.module.ts...
@@ -44,7 +46,7 @@ export class SomeComponent {
   ) { }
 
   show() {
-    this.msg.wait('Doing something time consuming...', false, true, true);
+    this.msg.wait('Doing something time consuming...');
     setTimeout(() => {
       this.msg.success('Done!');
     }, 2000);
@@ -52,3 +54,43 @@ export class SomeComponent {
 
 }
 ```
+
+## API
+
+### Type `INgxAppMsgContext`
+`type INgxAppMsgContext = 'wait' | 'warning' | 'success' | 'error'`
+
+### Interface `INgxAppMsgOptions`
+You can pass an instance of this to the component to set the autohide delay.
+ - `autohideAfter: number` Default: 4000ms
+
+### Component `NgxAppMsgComponent`
+
+**selector:** `ngx-app-msg` **exportAs:** `ngxAppMessage`
+
+#### Inputs
+  - `options: INgxAppMsgOptions` Optional. Example: `<ngx-app-msg [options]="{autohideAfter: 10 * 1000}"></ngx-app-msg>`
+
+#### Methods
+  - `dismiss()` Use this to programmatically hide the message.
+
+### Service: `NgxAppMsgService`
+All public methods take the following parameters. There are different defaults depending on the context: For example `autohide` is set to false by default for `wait()` and true for `success()`
+
+ - `message: string` The message you want to display.
+ - `autohide: boolean` Whether to hide the message automatically after a timeout.
+ - `modal: boolean` Whether to display a modal backdrop that prevents interaction with the page while the message is shown.
+ - `dismissible: boolean` Whether to show a close button.
+
+#### Methods
+ - `show(context: INgxAppMsgContext, message: string, autohide = true, modal = false, dismissible = false)`
+ - `wait(message: string, autohide = false, modal = true, dismissible = false)`
+ - `warn(message: string, autohide = false, modal = true, dismissible = true)`
+ - `error(message: string, autohide = false, modal = true, dismissible = true)`
+ - `success(message: string, autohide = true, modal = false, dismissible = true)`
+
+## Customizing
+
+None of the styles or animations are coded into the component. The stylesheet can be customized as you wish &mdash; e.g. switching the placement of the message, changing the icons, or adjusting the animations.
+
+If you don't like the markup, you can easily extend the component with a different template.

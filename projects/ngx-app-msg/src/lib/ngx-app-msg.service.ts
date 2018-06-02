@@ -14,30 +14,30 @@ export class NgxAppMsgService {
     this.messages$$ = new BehaviorSubject(null);
   }
 
-  private _show(context: INgxAppMsgContext, message: string, autohide: boolean, modal: boolean, dismissable: boolean) {
+  private _show(context: INgxAppMsgContext, message: string, autohide: boolean, modal: boolean, dismissible: boolean) {
     this.messages$$.next({
       context: context,
       message: message,
       autohide: autohide,
       modal: modal,
-      dismissable: dismissable
+      dismissible: dismissible
     });
   }
 
-  show(context: INgxAppMsgContext, message: string, autohide = true, modal = false, dismissable = false) {
-    this._show(context, message, autohide, modal, dismissable);
+  show(context: INgxAppMsgContext, message: string, autohide = true, modal = false, dismissible = false) {
+    this._show(context, message, autohide, modal, dismissible);
   }
 
-  wait(message: string, autohide = false, modal = true, dismissable = false) {
-    this._show('wait', message, autohide, modal, dismissable);
+  wait(message: string, autohide = false, modal = true, dismissible = false) {
+    this._show('wait', message, autohide, modal, dismissible);
   }
-  warn(message: string, autohide = true, modal = true, dismissable = false) {
-    this._show('warning', message, autohide, modal, dismissable);
+  warn(message: string, autohide = false, modal = true, dismissible = true) {
+    this._show('warning', message, autohide, modal, dismissible);
   }
-  error(message: string, autohide = false, modal = true, dismissable = true) {
-    this._show('error', message, autohide, modal, dismissable);
+  error(message: string, autohide = false, modal = true, dismissible = true) {
+    this._show('error', message, autohide, modal, dismissible);
   }
-  success(message: string, autohide = true, modal = false, dismissable = false) {
-    this._show('success', message, autohide, modal, dismissable);
+  success(message: string, autohide = true, modal = false, dismissible = true) {
+    this._show('success', message, autohide, modal, dismissible);
   }
 }
