@@ -9,9 +9,7 @@ import { NgxAppMsgService } from './ngx-app-msg.service';
 
 @Component({
   selector: 'ngx-app-msg',
-  templateUrl: './ngx-app-msg.component.html',
-  styleUrls: ['./ngx-app-msg.component.scss'],
-
+  templateUrl: './ngx-app-msg.component.html'
 })
 export class NgxAppMsgComponent implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<void> = new Subject<void>();
@@ -20,6 +18,7 @@ export class NgxAppMsgComponent implements OnInit, OnDestroy {
   context: string;
   dismissable: boolean;
   modal: boolean;
+  hideTimeout: any = null;
   constructor(private service: NgxAppMsgService) { }
 
   ngOnInit() {
@@ -36,6 +35,10 @@ export class NgxAppMsgComponent implements OnInit, OnDestroy {
   }
 
   handleChange(msg: INgxAppMsg) {
+    if (this.hideTimeout) {
+      clearTimeout(this.hideTimeout);
+      this.hideTimeout = null;
+    }
     if (! msg) {
       this.shown = false;
     } else {
@@ -43,6 +46,9 @@ export class NgxAppMsgComponent implements OnInit, OnDestroy {
       this.context = msg.context;
       this.dismissable = msg.dismissable;
       this.modal = msg.modal;
+      if (msg.autohide) {
+        this.hideTimeout = setTimeout(() => this.shown = false, 3000);
+      }
       this.shown = true;
     }
 

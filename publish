@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+baseDir=$(pwd);
+cd projects/ngx-app-msg
+version=$(npm version patch)
+cd $baseDir
+git add -A
+git commit -m "prepublish $version"
+npm version $version
+ng build ngx-app-msg --prod
+ng build --prod --aot
+git status
