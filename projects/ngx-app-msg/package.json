@@ -1,5 +1,5 @@
 {
-  "name": "ngx-app-msg",
+  "name": "@nowzoo/ngx-app-msg",
   "version": "0.0.9",
   "license": "MIT",
   "peerDependencies": {

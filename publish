@@ -6,7 +6,9 @@ cd $baseDir
 git add -A
 git commit -m "prepublish $version"
 npm version $version
+rm -rf dist
 ng build ngx-app-msg --prod
+rm -rf docs
 ng build --prod --aot
 git add -A
 git commit -m "publish version $version"
