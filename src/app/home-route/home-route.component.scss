@@ -1,0 +1,9 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+.display-4 {
+
+  @include media-breakpoint-down('sm') {
+    font-size: 2em;
+  }
+}

@@ -13,5 +13,10 @@ ng build --prod --aot
 git add -A
 git commit -m "prepublish $version"
 npm version $version --allow-same-version
+cp LICENSE README.md /dist/ngx-app-msg
 git commit -m "publish version $version"
+git push origin master
+cd dist/ngx-app-msg
+npm publish
+cd $baseDir
 git status
