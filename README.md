@@ -57,25 +57,22 @@ export class SomeComponent {
 
 ## API
 
-### Type `INgxAppMsgContext`
+
 `type INgxAppMsgContext = 'wait' | 'warning' | 'success' | 'error'`
 
-### Interface `INgxAppMsgOptions`
-You can pass an instance of this to the component to set the autohide delay.
- - `autohideAfter: number` Default: 4000ms
+`interface INgxAppMsgOptions {autohideAfter: number;}`
+You can pass an instance of this to the component to set the autohide delay. The default delay is 4000 (4 seconds.)
+
 
 ### Component `NgxAppMsgComponent`
 
 **selector:** `ngx-app-msg` **exportAs:** `ngxAppMessage`
 
-#### Inputs
-  - `options: INgxAppMsgOptions` Optional. Example:
-  ```html
-  <ngx-app-msg [options]="{autohideAfter: 10 * 1000}"></ngx-app-msg>
-  ```
+`@Input() options: INgxAppMsgOptions` Optional. Example:
+```html
+<ngx-app-msg [options]="{autohideAfter: 10 * 1000}"></ngx-app-msg>
+```
 
-#### Methods
-  - `dismiss()` Use this to programmatically hide the message.
 
 ### Service: `NgxAppMsgService`
 All public methods take the following parameters. There are different defaults depending on the context: For example `autohide` is set to false by default for `wait()` and true for `success()`
