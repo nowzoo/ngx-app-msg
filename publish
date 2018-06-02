@@ -9,7 +9,7 @@ rm -rf docs
 ng build --prod --aot --base-href /ngx-app-msg/
 cp LICENSE README.md dist/ngx-app-msg
 git add -A
-git commit -m "publish version $version"
+git commit -m "release $version"
 git tag $version
 git push origin master
 git push --tags
