@@ -58,7 +58,7 @@ export class SomeComponent {
 ## API
 
 
-`type INgxAppMsgContext = 'wait' | 'warning' | 'success' | 'error'`
+`type NgxAppMsgContext = 'wait' | 'warning' | 'success' | 'error'`
 
 `interface INgxAppMsgOptions {autohideAfter: number;}`
 
@@ -84,7 +84,7 @@ All public methods take the following parameters. There are different defaults d
  - `dismissible: boolean` Whether to show a close button.
 
 #### Methods
- - `show(context: INgxAppMsgContext, message: string, autohide = true, modal = false, dismissible = false)`
+ - `show(context: NgxAppMsgContext, message: string, autohide = true, modal = false, dismissible = false)`
  - `wait(message: string, autohide = false, modal = true, dismissible = false)`
  - `warn(message: string, autohide = false, modal = true, dismissible = true)`
  - `error(message: string, autohide = false, modal = true, dismissible = true)`

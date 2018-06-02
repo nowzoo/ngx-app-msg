@@ -1,6 +1,6 @@
-export type INgxAppMsgContext = 'wait' | 'warning' | 'success' | 'error';
+export type NgxAppMsgContext = 'wait' | 'warning' | 'success' | 'error';
 export interface INgxAppMsg {
-  context: INgxAppMsgContext;
+  context: NgxAppMsgContext;
   message: string;
   modal: boolean;
   dismissible: boolean;

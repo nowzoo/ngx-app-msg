@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { INgxAppMsg, INgxAppMsgContext } from './interfaces';
+import { INgxAppMsg, NgxAppMsgContext } from './interfaces';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +14,7 @@ export class NgxAppMsgService {
     this.messages$$ = new BehaviorSubject(null);
   }
 
-  private _show(context: INgxAppMsgContext, message: string, autohide: boolean, modal: boolean, dismissible: boolean) {
+  private _show(context: NgxAppMsgContext, message: string, autohide: boolean, modal: boolean, dismissible: boolean) {
     this.messages$$.next({
       context: context,
       message: message,
@@ -24,7 +24,7 @@ export class NgxAppMsgService {
     });
   }
 
-  show(context: INgxAppMsgContext, message: string, autohide = true, modal = false, dismissible = false) {
+  show(context: NgxAppMsgContext, message: string, autohide = true, modal = false, dismissible = false) {
     this._show(context, message, autohide, modal, dismissible);
   }
 
