@@ -69,7 +69,10 @@ You can pass an instance of this to the component to set the autohide delay.
 **selector:** `ngx-app-msg` **exportAs:** `ngxAppMessage`
 
 #### Inputs
-  - `options: INgxAppMsgOptions` Optional. Example: `<ngx-app-msg [options]="{autohideAfter: 10 * 1000}"></ngx-app-msg>`
+  - `options: INgxAppMsgOptions` Optional. Example:
+  ```html
+  <ngx-app-msg [options]="{autohideAfter: 10 * 1000}"></ngx-app-msg>
+  ```
 
 #### Methods
   - `dismiss()` Use this to programmatically hide the message.
