@@ -9,8 +9,6 @@ compilerOptions.module = 'CommonJs';
 
 module.exports = function (wallaby) {
 
-  console.error(path.join(wallaby.localProjectDir, '../../node_modules'));
-
   var webpackPostprocessor = wallabyWebpack({
     entryPatterns: [
       'src/wallabyTest.js',
@@ -73,7 +71,7 @@ module.exports = function (wallaby) {
     },
 
     env: {
-      kind: 'chrome'
+      kind: 'electron'
     },
 
     postprocessor: webpackPostprocessor,
@@ -83,6 +81,6 @@ module.exports = function (wallaby) {
     },
     filesWithNoCoverageCalculated: ['src/*.ts', 'src/**/*.module.ts'],
 
-    debug: true
+    debug: false
   };
 };

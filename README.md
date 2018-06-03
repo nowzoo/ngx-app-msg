@@ -1,17 +1,19 @@
 # NgxAppMsg
 
-A flexible message service and component for Angular 6 apps. [Demo App](https://nowzoo.github.io/ngx-app-msg/)
+A flexible message service and component for Angular 6 apps. See the [demo](https://nowzoo.github.io/ngx-app-msg/).
 
 
 ## Quick Start
 
+### Install
 ```bash
 npm i --save @nowzoo/ngx-app-msg
 ```
 
+### Add the styles
 Copy the `ngx-app-msg.scss` file [here](https://github.com/nowzoo/ngx-app-msg/blob/master/src/ngx-app-msg.scss) into your app's `src/` directory, and incorporate it into your app's styles. You can do this in `angular.json` ([example](https://github.com/nowzoo/ngx-app-msg/blob/master/angular.json#L31)) or by importing it from your main stylesheet.
 
-**Note:** None of the styles or animations are coded into the component. You have to provide them in your app's build. See [customizing](#customizing) below.
+**Note:**  None of the styles or animations are coded into the component. You have to provide them in your app's build. See [customizing](#customizing) below.
 
 ### Import the module
 ```ts
@@ -92,9 +94,9 @@ All public methods take the following parameters. There are different defaults d
 
 ## Customizing
 
-None of the styles or animations are coded into the component. The stylesheet can be customized as you wish &mdash; e.g. switching the placement of the message, changing the icons, or adjusting the animations.
+**CSS** The library is unopinionated as to design. None of the styles or animations are coded into the component. The downside is that you have to add styles yourself. The upside is that the the component can be customized as you wish &mdash; e.g. switching the placement of the message, changing the icons, or adjusting the animations.
 
-If you don't like the markup, you can easily extend the component with a different template.
+**Markup** If you don't like the markup, you can easily extend the component with a different template.
 
 ## Contributing
 
@@ -102,7 +104,7 @@ Contributions and suggestions are welcome.
 
 This library was built with the Angular CLI.
 
-To work on the code:
+### Development set up
 
 ```bash
 # clone this repo
@@ -119,11 +121,15 @@ ng serve --open
 
 ```
 
-The demo site code is in `src/app`.
+The [demo app](https://nowzoo.github.io/ngx-app-msg/) code is in `src/app`.
 
 The library itself is found under `projects/ngx-app-msg`.
 
-**Notes**
+### Tests
+ - `ng test ngx-app-msg`
+ - Optionally, you can run tests with Wallaby using the config at `projects/ngx-app-msg/wallaby.js`
+
+### Other dev notes
 
  - You must build the library with `ng build ngx-app-msg --prod` for changes to show up in the demo app.
  - Also, you must build the library at least once before you serve the demo app.
