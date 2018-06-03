@@ -53,9 +53,8 @@ export class NgxAppMsgComponent implements OnInit, OnDestroy {
       }
       this.shown = true;
     }
-
   }
-  dismiss(event?: Event) {
+  dismiss(event?: any) {
     if (event) {
       event.preventDefault();
     }
