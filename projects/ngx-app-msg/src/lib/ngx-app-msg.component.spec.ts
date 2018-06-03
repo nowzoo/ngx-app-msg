@@ -71,7 +71,6 @@ describe('NgxAppMsgComponent', () => {
     tick(1);
     expect(component.shown).toBe(false);
   }));
-
   describe('dismiss()', () => {
     it('should set shown to false if passed an event', () => {
       const event: any = {preventDefault: jasmine.createSpy()};
